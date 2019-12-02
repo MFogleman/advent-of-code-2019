@@ -32,8 +32,7 @@
 # What is the sum of the fuel requirements for all of the modules on your 
 # spacecraft?
 
-from input import input
-
+from input import *
 
 def calc_requred_fuel(mass):
     return mass / 3 -2
@@ -41,5 +40,4 @@ def calc_requred_fuel(mass):
 def main(m):
   return reduce(lambda x, y: x + y, map(calc_requred_fuel, m))
 
-
-print(main(input))
+print(main(input)) # 3223398

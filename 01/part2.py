@@ -31,8 +31,7 @@
 # the fuel requirements for each module separately, then add them all up at the 
 # end.)
 
-from input import input
-
+from input import *
 
 def calc_requred_fuel(mass):
     fuel = mass / 3 -2
@@ -43,5 +42,4 @@ def calc_requred_fuel(mass):
 def main(m):
   return reduce(lambda x, y: x + y, map(calc_requred_fuel, m))
 
-
-print(main(input))
+print(main(input)) # 4832253
