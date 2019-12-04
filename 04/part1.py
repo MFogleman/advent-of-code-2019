@@ -1,4 +1,5 @@
 import sys
+from functools import partial
 
 def allPass(list_of_callbacks, x):
   return [f(x) for f in list_of_callbacks].count(False) == 0
@@ -26,10 +27,14 @@ def digits_never_decrease(stringNum):
 
   return True
 
-def count_possible_combos(total_count, number):
-  if (allPass([is_six_digit, has_two_adjacent_digits, digits_never_decrease], str(number))):
+def count_matching_combos(predicates, total_count, number):
+  if (allPass(predicates, str(number))):
     total_count += 1
   return total_count
+
+
+def count_of_entries_that_satisfy(predicates, input):
+  return reduce(partial(count_matching_combos, predicates), input, 0)
 
 def main(filename):
     """
@@ -52,7 +57,9 @@ def main(filename):
 
     list_of_numbers_in_range = list(range(min, max+1))
 
-    print(reduce(count_possible_combos, list_of_numbers_in_range, 0))
+    predicates = [is_six_digit, has_two_adjacent_digits, digits_never_decrease]
+
+    print(count_of_entries_that_satisfy(predicates, list_of_numbers_in_range))
 
 if __name__ == '__main__':
     main(sys.argv[1])
