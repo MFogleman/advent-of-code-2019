@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code-2019",
+  "version": "1.0.0",
+  "description": "A fun excuse to brush up on lackluster python skills",
+  "main": "index.js",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MFogleman/advent-of-code-2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MFogleman/advent-of-code-2019/issues"
+  },
+  "homepage": "https://github.com/MFogleman/advent-of-code-2019#readme"
+}
